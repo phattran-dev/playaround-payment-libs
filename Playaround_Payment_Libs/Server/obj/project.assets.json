@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\backup\\Personal\\RoadMap\\playaround-payment-libs\\Playaround_Payment_Libs\\Playaround_Payment_Libs\\Playaround_Payment_Libs.csproj",
-      "projectName": "Playaround_Payment_Libs",
-      "projectPath": "C:\\backup\\Personal\\RoadMap\\playaround-payment-libs\\Playaround_Payment_Libs\\Playaround_Payment_Libs\\Playaround_Payment_Libs.csproj",
+      "projectUniqueName": "C:\\backup\\Personal\\RoadMap\\playaround-payment-libs\\Playaround_Payment_Libs\\Server\\Server.csproj",
+      "projectName": "Server",
+      "projectPath": "C:\\backup\\Personal\\RoadMap\\playaround-payment-libs\\Playaround_Payment_Libs\\Server\\Server.csproj",
       "packagesPath": "C:\\Users\\phat.tran\\.nuget\\packages\\",
-      "outputPath": "C:\\backup\\Personal\\RoadMap\\playaround-payment-libs\\Playaround_Payment_Libs\\Playaround_Payment_Libs\\obj\\",
+      "outputPath": "C:\\backup\\Personal\\RoadMap\\playaround-payment-libs\\Playaround_Payment_Libs\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\phat.tran\\AppData\\Roaming\\NuGet\\NuGet.Config",

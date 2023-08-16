@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "jU1xud140GuaKQqHflZZrG+JHimPQMqRZ+Fi5VP4/nw=",
+  "Source": "Playaround_Payment_Libs",
+  "BasePath": "_content/Playaround_Payment_Libs",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Playaround_Payment_Libs\\wwwroot",
+      "Source": "Playaround_Payment_Libs",
+      "ContentRoot": "C:\\backup\\Personal\\RoadMap\\playaround-payment-libs\\Playaround_Payment_Libs\\Playaround_Payment_Libs\\wwwroot\\",
+      "BasePath": "_content/Playaround_Payment_Libs",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\backup\\Personal\\RoadMap\\playaround-payment-libs\\Playaround_Payment_Libs\\Playaround_Payment_Libs\\wwwroot\\css\\site.css",
+      "SourceId": "Playaround_Payment_Libs",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\backup\\Personal\\RoadMap\\playaround-payment-libs\\Playaround_Payment_Libs\\Playaround_Payment_Libs\\wwwroot\\",
+      "BasePath": "_content/Playaround_Payment_Libs",
+      "RelativePath": "css/site.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\site.css"
+    }
+  ]
+}

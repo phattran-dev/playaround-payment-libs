@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Playaround_Payment_Libs.props" />
+</Project>

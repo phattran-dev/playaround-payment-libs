@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\backup\\Personal\\RoadMap\\playaround-payment-libs\\Playaround_Payment_Libs\\Playaround_Payment_Libs\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Playaround_Payment_Libs.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.Playaround_Payment_Libs.props",
+      "PackagePath": "build\\Playaround_Payment_Libs.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.Playaround_Payment_Libs.props",
+      "PackagePath": "buildMultiTargeting\\Playaround_Payment_Libs.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.Playaround_Payment_Libs.props",
+      "PackagePath": "buildTransitive\\Playaround_Payment_Libs.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
