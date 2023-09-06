@@ -2,7 +2,7 @@
 
 namespace Stripe_Payment_Core.Entities
 {
-    public class Order : EntityBase<Guid>
+    public class Order : EntityBase
     {
         public Guid CustomerId { get; set; }
         public OrderStatus Status { get; set; }

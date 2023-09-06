@@ -1,6 +1,6 @@
 ﻿namespace Stripe_Payment_Core.Entities
 {
-    public class OrderItem : EntityBase<Guid>
+    public class OrderItem : EEntityBase
     {
         public Guid OrderId { get; set; }
         public Guid ProductId { get; set; }

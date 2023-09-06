@@ -1,6 +1,6 @@
 ﻿namespace Stripe_Payment_Core.Entities
 {
-    public class Customer : EntityBase<Guid>
+    public class Customer : EntityBase
     {
         public string CustomerCode { get; set; }
     }

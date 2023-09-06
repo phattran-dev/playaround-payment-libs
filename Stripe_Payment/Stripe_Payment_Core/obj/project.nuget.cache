@@ -1,12 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "JUfaEYWCUh52ZIy7jVPoZl6Y/LdYWFToC6Gd5Trd49Rm7Gyrlefq1iOBOTrX/DH6K8Wiy8k/CpTfSgBt7RMpQw==",
+  "dgSpecHash": "AkqsnipUgquRqYHDnJuDV+zOSn4AMBVuK4N2lOMVVJLra4nAbEFl5pWJA+fXYA6GgCCS+dny5aXZbxB6+L892g==",
   "success": true,
   "projectFilePath": "E:\\Personal_Projects\\playaround_payment_libs\\Stripe_Payment\\Stripe_Payment_Core\\Stripe_Payment_Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yowin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\7.0.10\\microsoft.aspnetcore.cryptography.internal.7.0.10.nupkg.sha512",
     "C:\\Users\\yowin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\7.0.10\\microsoft.aspnetcore.cryptography.keyderivation.7.0.10.nupkg.sha512",
+    "C:\\Users\\yowin\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.21\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.21.nupkg.sha512",
+    "C:\\Users\\yowin\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.21\\microsoft.entityframeworkcore.6.0.21.nupkg.sha512",
+    "C:\\Users\\yowin\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.21\\microsoft.entityframeworkcore.abstractions.6.0.21.nupkg.sha512",
+    "C:\\Users\\yowin\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.21\\microsoft.entityframeworkcore.analyzers.6.0.21.nupkg.sha512",
+    "C:\\Users\\yowin\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.21\\microsoft.entityframeworkcore.relational.6.0.21.nupkg.sha512",
     "C:\\Users\\yowin\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\yowin\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",
+    "C:\\Users\\yowin\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\yowin\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\yowin\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\yowin\\.nuget\\packages\\microsoft.extensions.identity.core\\7.0.10\\microsoft.extensions.identity.core.7.0.10.nupkg.sha512",
@@ -15,7 +22,9 @@
     "C:\\Users\\yowin\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\yowin\\.nuget\\packages\\microsoft.extensions.options\\7.0.1\\microsoft.extensions.options.7.0.1.nupkg.sha512",
     "C:\\Users\\yowin\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "C:\\Users\\yowin\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\yowin\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
+    "C:\\Users\\yowin\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.1\\system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
     "C:\\Users\\yowin\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []

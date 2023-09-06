@@ -43,9 +43,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.Extensions.Identity.Core": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.10, )"
+              "version": "[6.0.21, )"
             },
             "Microsoft.Extensions.Identity.Stores": {
               "target": "Package",
