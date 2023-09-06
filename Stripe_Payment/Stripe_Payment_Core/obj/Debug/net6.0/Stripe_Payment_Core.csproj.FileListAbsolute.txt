@@ -1,0 +1,14 @@
+E:\Personal_Projects\playaround_payment_libs\Stripe_Payment\Stripe_Payment_Core\obj\Debug\net6.0\Stripe_Payment_Core.csproj.AssemblyReference.cache
+E:\Personal_Projects\playaround_payment_libs\Stripe_Payment\Stripe_Payment_Core\obj\Debug\net6.0\Stripe_Payment_Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\Personal_Projects\playaround_payment_libs\Stripe_Payment\Stripe_Payment_Core\obj\Debug\net6.0\Stripe_Payment_Core.AssemblyInfoInputs.cache
+E:\Personal_Projects\playaround_payment_libs\Stripe_Payment\Stripe_Payment_Core\obj\Debug\net6.0\Stripe_Payment_Core.AssemblyInfo.cs
+E:\Personal_Projects\playaround_payment_libs\Stripe_Payment\Stripe_Payment_Core\obj\Debug\net6.0\Stripe_Payment_Core.csproj.CoreCompileInputs.cache
+E:\Personal_Projects\playaround_payment_libs\Stripe_Payment\Stripe_Payment_Core\bin\Debug\net6.0\Stripe_Payment_Core.deps.json
+E:\Personal_Projects\playaround_payment_libs\Stripe_Payment\Stripe_Payment_Core\bin\Debug\net6.0\Stripe_Payment_Core.dll
+E:\Personal_Projects\playaround_payment_libs\Stripe_Payment\Stripe_Payment_Core\bin\Debug\net6.0\Stripe_Payment_Core.pdb
+E:\Personal_Projects\playaround_payment_libs\Stripe_Payment\Stripe_Payment_Core\obj\Debug\net6.0\Stripe_Payment_Core.dll
+E:\Personal_Projects\playaround_payment_libs\Stripe_Payment\Stripe_Payment_Core\obj\Debug\net6.0\refint\Stripe_Payment_Core.dll
+E:\Personal_Projects\playaround_payment_libs\Stripe_Payment\Stripe_Payment_Core\obj\Debug\net6.0\Stripe_Payment_Core.pdb
+E:\Personal_Projects\playaround_payment_libs\Stripe_Payment\Stripe_Payment_Core\obj\Debug\net6.0\ref\Stripe_Payment_Core.dll
+E:\Personal_Projects\playaround_payment_libs\Stripe_Payment\Stripe_Payment_Core\bin\Debug\net6.0\Stripe_Payment_Core.runtimeconfig.json
+E:\Personal_Projects\playaround_payment_libs\Stripe_Payment\Stripe_Payment_Core\obj\Debug\net6.0\Stripe_Payment_Core.genruntimeconfig.cache

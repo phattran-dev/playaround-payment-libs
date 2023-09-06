@@ -6,5 +6,7 @@ namespace Stripe_Payment_Core.Entities
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public UserRole UserRole { get; set; }
+        public Customer Customer { get; set; }
     }
 }

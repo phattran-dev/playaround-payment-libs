@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "SmARqmTpz1nYe4+4EXkeqiypiT+A3LjlOmuYgPCYKOc=",
+  "Source": "Stripe_Payment_Server",
+  "BasePath": "_content/Stripe_Payment_Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
