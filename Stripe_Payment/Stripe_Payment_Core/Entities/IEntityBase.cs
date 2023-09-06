@@ -1,8 +1,8 @@
 ﻿namespace Stripe_Payment_Core.Entities
 {
-    public interface IEntity
+    public interface IEntity<T>
     {
-        public Guid Id { get; set; }
+        public T Id { get; set; }
     }
 
     public interface IAuditable
@@ -14,9 +14,9 @@
         public bool IsDeleted { get; set; }
     }
 
-    public class EntityBase : IEntity, IAuditable
+    public class EntityBase<T> : IEntity<T>, IAuditable
     {
-        public Guid Id { get; set; }
+        public T Id { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
         public Guid CreatedBy { get; set; }
