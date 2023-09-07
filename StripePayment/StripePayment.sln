@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StripePayment", "StripePayment\StripePayment.csproj", "{C9532CD6-BD3C-4C37-B64F-EE8F3EA2257F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StripePaymentServer", "StripePayment\StripePaymentServer.csproj", "{C9532CD6-BD3C-4C37-B64F-EE8F3EA2257F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StripePaymentClient", "StripePaymentClient\StripePaymentClient.csproj", "{9D61C2CE-4EC8-4D07-A5E3-25A6256747C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StripePaymentCore", "StripePaymentCore\StripePaymentCore.csproj", "{61EAA33F-A46F-4E9B-B445-2021AE97DED5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StripePaymentData", "StripePaymentData\StripePaymentData.csproj", "{C17651FF-9765-479C-A034-71F788744040}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{C9532CD6-BD3C-4C37-B64F-EE8F3EA2257F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9532CD6-BD3C-4C37-B64F-EE8F3EA2257F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9532CD6-BD3C-4C37-B64F-EE8F3EA2257F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D61C2CE-4EC8-4D07-A5E3-25A6256747C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D61C2CE-4EC8-4D07-A5E3-25A6256747C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D61C2CE-4EC8-4D07-A5E3-25A6256747C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D61C2CE-4EC8-4D07-A5E3-25A6256747C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61EAA33F-A46F-4E9B-B445-2021AE97DED5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61EAA33F-A46F-4E9B-B445-2021AE97DED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61EAA33F-A46F-4E9B-B445-2021AE97DED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61EAA33F-A46F-4E9B-B445-2021AE97DED5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C17651FF-9765-479C-A034-71F788744040}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C17651FF-9765-479C-A034-71F788744040}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C17651FF-9765-479C-A034-71F788744040}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C17651FF-9765-479C-A034-71F788744040}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
