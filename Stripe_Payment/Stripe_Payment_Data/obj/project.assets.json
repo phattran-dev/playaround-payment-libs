@@ -2146,7 +2146,8 @@
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.21",
       "Microsoft.EntityFrameworkCore >= 6.0.21",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.21",
-      "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.21"
+      "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.21",
+      "Microsoft.Extensions.Identity.Core >= 6.0.21"
     ]
   },
   "packageFolders": {
@@ -2156,11 +2157,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Personal_Projects\\playaround_payment_libs\\Stripe_Payment\\Stripe_Payment_Core\\Stripe_Payment_Core.csproj",
-      "projectName": "Stripe_Payment_Core",
-      "projectPath": "E:\\Personal_Projects\\playaround_payment_libs\\Stripe_Payment\\Stripe_Payment_Core\\Stripe_Payment_Core.csproj",
+      "projectUniqueName": "E:\\Personal_Projects\\playaround_payment_libs\\Stripe_Payment\\Stripe_Payment_Data\\Stripe_Payment_Data.csproj",
+      "projectName": "Stripe_Payment_Data",
+      "projectPath": "E:\\Personal_Projects\\playaround_payment_libs\\Stripe_Payment\\Stripe_Payment_Data\\Stripe_Payment_Data.csproj",
       "packagesPath": "C:\\Users\\yowin\\.nuget\\packages\\",
-      "outputPath": "E:\\Personal_Projects\\playaround_payment_libs\\Stripe_Payment\\Stripe_Payment_Core\\obj\\",
+      "outputPath": "E:\\Personal_Projects\\playaround_payment_libs\\Stripe_Payment\\Stripe_Payment_Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -2209,6 +2210,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[6.0.21, )"
+          },
+          "Microsoft.Extensions.Identity.Core": {
+            "target": "Package",
+            "version": "[6.0.21, )"
           }
         },
         "imports": [
@@ -2227,7 +2232,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

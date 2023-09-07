@@ -8,7 +8,7 @@ namespace Stripe_Payment_Core
         public DbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<DbContext>();
-            optionsBuilder.UseSqlServer("Server=localhost;Initial Catalog=StripePayment;Persist Security Info=True;Integrated Security=true;");
+            optionsBuilder.UseSqlServer("Server=localhost;Initial Catalog=StripePayment;");
 
             return new DbContext(optionsBuilder.Options);
         }
