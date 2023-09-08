@@ -1,6 +1,6 @@
-﻿using StripePaymentCore.Entities.BaseEntities;
+﻿using StripePaymentData.Entities.BaseEntities;
 
-namespace StripePaymentCore.Entities.EntitesBase
+namespace StripePaymentData.Entities.EntitesBase
 {
     public abstract class Audited<TUser> : IAudited<TUser>
         where TUser : IEntityBase<Guid>

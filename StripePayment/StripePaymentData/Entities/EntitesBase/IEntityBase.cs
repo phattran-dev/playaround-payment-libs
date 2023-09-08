@@ -1,4 +1,4 @@
-﻿namespace StripePaymentCore.Entities.BaseEntities
+﻿namespace StripePaymentData.Entities.BaseEntities
 {
     public interface IEntityBase<TPrimaryKey>
     {

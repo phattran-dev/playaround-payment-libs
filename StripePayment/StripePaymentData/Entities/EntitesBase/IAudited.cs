@@ -1,13 +1,8 @@
-﻿using StripePaymentCore.Entities.BaseEntities;
+﻿using StripePaymentData.Entities.BaseEntities;
 
-namespace StripePaymentCore.Entities.EntitesBase
+namespace StripePaymentData.Entities.EntitesBase
 {
-    public abstract class EntityBase<TPrimaryKey> : IEntityBase<TPrimaryKey>
-    {
-        public TPrimaryKey Id { get; set; }
-    }
-
-    public abstract class FullAuditedEntityBase<TUser, TPrimaryKey> : EntityBase<TPrimaryKey>, IAudited<TUser>
+    public interface IAudited<TUser> 
         where TUser : IEntityBase<Guid>
     {
         public Guid? CreatedById { get; set; }

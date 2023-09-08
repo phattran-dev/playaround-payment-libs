@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using StripePaymentCore.Entities;
-using StripePaymentCore.Entities.EntitesBase;
+using StripePaymentData.Entities;
+using StripePaymentData.Entities.EntitesBase;
 
 namespace StripePaymentData.Configurations.BaseConfiguration
 {

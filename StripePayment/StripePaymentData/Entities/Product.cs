@@ -1,6 +1,6 @@
-﻿using StripePaymentCore.Entities.EntitesBase;
+﻿using StripePaymentData.Entities.EntitesBase;
 
-namespace StripePaymentCore.Entities
+namespace StripePaymentData.Entities
 {
     public class Product : FullAuditedEntityBase<User, Guid>
     {

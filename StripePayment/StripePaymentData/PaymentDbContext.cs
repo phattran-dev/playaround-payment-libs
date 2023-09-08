@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using StripePaymentCore.Entities;
+using StripePaymentData.Entities;
 using StripePaymentData.Configurations;
 
 namespace StripePaymentData

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using StripePaymentCore.Entities.BaseEntities;
+using StripePaymentData.Entities.BaseEntities;
 
-namespace StripePaymentCore.Entities
+namespace StripePaymentData.Entities
 {
     public class User : IdentityUser<Guid>, IEntityBase<Guid>
     {
