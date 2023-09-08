@@ -12,8 +12,8 @@ using StripePaymentData;
 namespace StripePaymentData.Migrations
 {
     [DbContext(typeof(PaymentDbContext))]
-    [Migration("20230907075831_InitialDatabase")]
-    partial class InitialDatabase
+    [Migration("20230908034202_InitialDatabaseStructure")]
+    partial class InitialDatabaseStructure
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,7 +46,7 @@ namespace StripePaymentData.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("AspNetRoleClaims", (string)null);
+                    b.ToTable("RoleClaims", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
@@ -70,7 +70,7 @@ namespace StripePaymentData.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("AspNetUserClaims", (string)null);
+                    b.ToTable("UserClaims", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
@@ -91,7 +91,7 @@ namespace StripePaymentData.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("AspNetUserLogins", (string)null);
+                    b.ToTable("UserLogins", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
@@ -102,19 +102,11 @@ namespace StripePaymentData.Migrations
                     b.Property<Guid>("RoleId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("UserId", "RoleId");
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("AspNetUserRoles", (string)null);
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUserRole<Guid>");
-
-                    b.UseTphMappingStrategy();
+                    b.ToTable("UserRoles", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
@@ -133,10 +125,10 @@ namespace StripePaymentData.Migrations
 
                     b.HasKey("UserId", "LoginProvider", "Name");
 
-                    b.ToTable("AspNetUserTokens", (string)null);
+                    b.ToTable("UserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("StripePaymentCore.Entities.Customer", b =>
+            modelBuilder.Entity("StripePaymentData.Entities.Customer", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -174,7 +166,7 @@ namespace StripePaymentData.Migrations
                     b.ToTable("Customers");
                 });
 
-            modelBuilder.Entity("StripePaymentCore.Entities.Order", b =>
+            modelBuilder.Entity("StripePaymentData.Entities.Order", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -224,7 +216,7 @@ namespace StripePaymentData.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("StripePaymentCore.Entities.OrderItem", b =>
+            modelBuilder.Entity("StripePaymentData.Entities.OrderItem", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -249,7 +241,7 @@ namespace StripePaymentData.Migrations
                     b.ToTable("OrderItems");
                 });
 
-            modelBuilder.Entity("StripePaymentCore.Entities.Product", b =>
+            modelBuilder.Entity("StripePaymentData.Entities.Product", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -298,7 +290,7 @@ namespace StripePaymentData.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("StripePaymentCore.Entities.Role", b =>
+            modelBuilder.Entity("StripePaymentData.Entities.Role", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -323,10 +315,10 @@ namespace StripePaymentData.Migrations
                         .HasDatabaseName("RoleNameIndex")
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
-                    b.ToTable("AspNetRoles", (string)null);
+                    b.ToTable("Roles", (string)null);
                 });
 
-            modelBuilder.Entity("StripePaymentCore.Entities.User", b =>
+            modelBuilder.Entity("StripePaymentData.Entities.User", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -402,19 +394,12 @@ namespace StripePaymentData.Migrations
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
-                    b.ToTable("AspNetUsers", (string)null);
-                });
-
-            modelBuilder.Entity("StripePaymentCore.Entities.UserRole", b =>
-                {
-                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>");
-
-                    b.HasDiscriminator().HasValue("UserRole");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
-                    b.HasOne("StripePaymentCore.Entities.Role", null)
+                    b.HasOne("StripePaymentData.Entities.Role", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -423,7 +408,7 @@ namespace StripePaymentData.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
                 {
-                    b.HasOne("StripePaymentCore.Entities.User", null)
+                    b.HasOne("StripePaymentData.Entities.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -432,7 +417,7 @@ namespace StripePaymentData.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
                 {
-                    b.HasOne("StripePaymentCore.Entities.User", null)
+                    b.HasOne("StripePaymentData.Entities.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -441,13 +426,13 @@ namespace StripePaymentData.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
                 {
-                    b.HasOne("StripePaymentCore.Entities.Role", null)
+                    b.HasOne("StripePaymentData.Entities.Role", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("StripePaymentCore.Entities.User", null)
+                    b.HasOne("StripePaymentData.Entities.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -456,22 +441,22 @@ namespace StripePaymentData.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
                 {
-                    b.HasOne("StripePaymentCore.Entities.User", null)
+                    b.HasOne("StripePaymentData.Entities.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("StripePaymentCore.Entities.Customer", b =>
+            modelBuilder.Entity("StripePaymentData.Entities.Customer", b =>
                 {
-                    b.HasOne("StripePaymentCore.Entities.User", "CreatedBy")
+                    b.HasOne("StripePaymentData.Entities.User", "CreatedBy")
                         .WithMany()
                         .HasForeignKey("CreatedById")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("StripePaymentCore.Entities.User", "UpdatedBy")
+                    b.HasOne("StripePaymentData.Entities.User", "UpdatedBy")
                         .WithMany()
                         .HasForeignKey("UpdatedById")
                         .OnDelete(DeleteBehavior.NoAction)
@@ -482,21 +467,21 @@ namespace StripePaymentData.Migrations
                     b.Navigation("UpdatedBy");
                 });
 
-            modelBuilder.Entity("StripePaymentCore.Entities.Order", b =>
+            modelBuilder.Entity("StripePaymentData.Entities.Order", b =>
                 {
-                    b.HasOne("StripePaymentCore.Entities.User", "CreatedBy")
+                    b.HasOne("StripePaymentData.Entities.User", "CreatedBy")
                         .WithMany()
                         .HasForeignKey("CreatedById")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("StripePaymentCore.Entities.Customer", "Customer")
+                    b.HasOne("StripePaymentData.Entities.Customer", "Customer")
                         .WithMany("Orders")
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("StripePaymentCore.Entities.User", "UpdatedBy")
+                    b.HasOne("StripePaymentData.Entities.User", "UpdatedBy")
                         .WithMany()
                         .HasForeignKey("UpdatedById")
                         .OnDelete(DeleteBehavior.NoAction)
@@ -509,15 +494,15 @@ namespace StripePaymentData.Migrations
                     b.Navigation("UpdatedBy");
                 });
 
-            modelBuilder.Entity("StripePaymentCore.Entities.OrderItem", b =>
+            modelBuilder.Entity("StripePaymentData.Entities.OrderItem", b =>
                 {
-                    b.HasOne("StripePaymentCore.Entities.Order", "Order")
+                    b.HasOne("StripePaymentData.Entities.Order", "Order")
                         .WithMany("OrderItems")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("StripePaymentCore.Entities.Product", "Product")
+                    b.HasOne("StripePaymentData.Entities.Product", "Product")
                         .WithMany("OrderItems")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.NoAction)
@@ -528,15 +513,15 @@ namespace StripePaymentData.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("StripePaymentCore.Entities.Product", b =>
+            modelBuilder.Entity("StripePaymentData.Entities.Product", b =>
                 {
-                    b.HasOne("StripePaymentCore.Entities.User", "CreatedBy")
+                    b.HasOne("StripePaymentData.Entities.User", "CreatedBy")
                         .WithMany()
                         .HasForeignKey("CreatedById")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("StripePaymentCore.Entities.User", "UpdatedBy")
+                    b.HasOne("StripePaymentData.Entities.User", "UpdatedBy")
                         .WithMany()
                         .HasForeignKey("UpdatedById")
                         .OnDelete(DeleteBehavior.NoAction)
@@ -547,9 +532,9 @@ namespace StripePaymentData.Migrations
                     b.Navigation("UpdatedBy");
                 });
 
-            modelBuilder.Entity("StripePaymentCore.Entities.User", b =>
+            modelBuilder.Entity("StripePaymentData.Entities.User", b =>
                 {
-                    b.HasOne("StripePaymentCore.Entities.Customer", "Customer")
+                    b.HasOne("StripePaymentData.Entities.Customer", "Customer")
                         .WithMany()
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -558,17 +543,17 @@ namespace StripePaymentData.Migrations
                     b.Navigation("Customer");
                 });
 
-            modelBuilder.Entity("StripePaymentCore.Entities.Customer", b =>
+            modelBuilder.Entity("StripePaymentData.Entities.Customer", b =>
                 {
                     b.Navigation("Orders");
                 });
 
-            modelBuilder.Entity("StripePaymentCore.Entities.Order", b =>
+            modelBuilder.Entity("StripePaymentData.Entities.Order", b =>
                 {
                     b.Navigation("OrderItems");
                 });
 
-            modelBuilder.Entity("StripePaymentCore.Entities.Product", b =>
+            modelBuilder.Entity("StripePaymentData.Entities.Product", b =>
                 {
                     b.Navigation("OrderItems");
                 });
