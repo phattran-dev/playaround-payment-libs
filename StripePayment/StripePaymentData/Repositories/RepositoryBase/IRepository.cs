@@ -13,5 +13,6 @@ namespace StripePaymentData.Repositories.RepositoryBase
         void UpdateRange(IEnumerable<TEntity> entities);
         void Delete(TEntity entity);
         void DeleteRange(IEnumerable<TEntity> entities);
+
     }
 }

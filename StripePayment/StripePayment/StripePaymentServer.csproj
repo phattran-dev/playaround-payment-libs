@@ -10,4 +10,12 @@
     <PackageReference Include="Stripe.net" Version="42.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\StripePaymentData\StripePaymentData.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 </Project>
