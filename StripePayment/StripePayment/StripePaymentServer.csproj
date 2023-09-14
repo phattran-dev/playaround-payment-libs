@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\StripePaymentCore\StripePaymentCore.csproj" />
     <ProjectReference Include="..\StripePaymentData\StripePaymentData.csproj" />
   </ItemGroup>
 

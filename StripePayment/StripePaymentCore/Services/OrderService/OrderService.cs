@@ -9,7 +9,7 @@ namespace StripePaymentCore.Services.OrderService
     {
         private readonly IRepository<PaymentDbContext, Order, Guid> _orderRepository;
         private readonly IUnitOfWork<PaymentDbContext> _unitOfWork;
-        OrderService(IUnitOfWork<PaymentDbContext> unitOfWork)
+        public OrderService(IUnitOfWork<PaymentDbContext> unitOfWork)
         {
             _unitOfWork = unitOfWork;
             _orderRepository = unitOfWork.GetRepository<Order, Guid>();
