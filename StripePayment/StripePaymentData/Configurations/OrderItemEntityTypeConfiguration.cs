@@ -5,9 +5,9 @@ using StripePaymentData.Configurations.BaseConfiguration;
 
 namespace StripePaymentData.Configurations
 {
-    public class OrderItemEntityTypeConfiguration : EntityTypeConfigurationBase<OrderItem, Guid>
+    public class OrderItemEntityTypeConfiguration : EntityTypeConfigurationBase<OrderItemEntity, Guid>
     {
-        public override void Configure(EntityTypeBuilder<OrderItem> builder)
+        public override void Configure(EntityTypeBuilder<OrderItemEntity> builder)
         {
             base.Configure(builder);
 
@@ -16,7 +16,7 @@ namespace StripePaymentData.Configurations
 
             builder.HasOne(x => x.Order)
                 .WithMany(x => x.OrderItems)
-                .HasForeignKey(x => x.ProductId)
+                .HasForeignKey(x => x.OrderId)
                 .OnDelete(DeleteBehavior.NoAction);
 
             builder.HasOne(x => x.Product)

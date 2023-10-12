@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StripePaymentData;
 
@@ -11,9 +12,11 @@ using StripePaymentData;
 namespace StripePaymentData.Migrations
 {
     [DbContext(typeof(PaymentDbContext))]
-    partial class PaymentDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231012071725_Add_Payment_Process_Table")]
+    partial class Add_Payment_Process_Table
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -166,7 +169,6 @@ namespace StripePaymentData.Migrations
             modelBuilder.Entity("StripePaymentData.Entities.OrderEntity", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Code")
@@ -233,8 +235,6 @@ namespace StripePaymentData.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("OrderId");
-
                     b.HasIndex("ProductId");
 
                     b.ToTable("OrderItems");
@@ -246,6 +246,18 @@ namespace StripePaymentData.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid?>("CreatedById")
+                        .IsRequired()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("CreatedDateUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
                     b.Property<Guid>("OrderId")
                         .HasColumnType("uniqueidentifier");
 
@@ -256,9 +268,18 @@ namespace StripePaymentData.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
+                    b.Property<DateTime?>("UpdateDateUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedById")
+                        .IsRequired()
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("OrderId");
+                    b.HasIndex("CreatedById");
+
+                    b.HasIndex("UpdatedById");
 
                     b.ToTable("PaymentProcess");
                 });
@@ -503,6 +524,12 @@ namespace StripePaymentData.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
+                    b.HasOne("StripePaymentData.Entities.PaymentProcessEntity", "PaymentProcess")
+                        .WithOne("Order")
+                        .HasForeignKey("StripePaymentData.Entities.OrderEntity", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("StripePaymentData.Entities.User", "UpdatedBy")
                         .WithMany()
                         .HasForeignKey("UpdatedById")
@@ -513,6 +540,8 @@ namespace StripePaymentData.Migrations
 
                     b.Navigation("Customer");
 
+                    b.Navigation("PaymentProcess");
+
                     b.Navigation("UpdatedBy");
                 });
 
@@ -520,7 +549,7 @@ namespace StripePaymentData.Migrations
                 {
                     b.HasOne("StripePaymentData.Entities.OrderEntity", "Order")
                         .WithMany("OrderItems")
-                        .HasForeignKey("OrderId")
+                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
@@ -537,13 +566,21 @@ namespace StripePaymentData.Migrations
 
             modelBuilder.Entity("StripePaymentData.Entities.PaymentProcessEntity", b =>
                 {
-                    b.HasOne("StripePaymentData.Entities.OrderEntity", "Order")
-                        .WithMany("PaymentProcesses")
-                        .HasForeignKey("OrderId")
+                    b.HasOne("StripePaymentData.Entities.User", "CreatedBy")
+                        .WithMany()
+                        .HasForeignKey("CreatedById")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.Navigation("Order");
+                    b.HasOne("StripePaymentData.Entities.User", "UpdatedBy")
+                        .WithMany()
+                        .HasForeignKey("UpdatedById")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("CreatedBy");
+
+                    b.Navigation("UpdatedBy");
                 });
 
             modelBuilder.Entity("StripePaymentData.Entities.ProductEntity", b =>
@@ -584,8 +621,12 @@ namespace StripePaymentData.Migrations
             modelBuilder.Entity("StripePaymentData.Entities.OrderEntity", b =>
                 {
                     b.Navigation("OrderItems");
+                });
 
-                    b.Navigation("PaymentProcesses");
+            modelBuilder.Entity("StripePaymentData.Entities.PaymentProcessEntity", b =>
+                {
+                    b.Navigation("Order")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("StripePaymentData.Entities.ProductEntity", b =>

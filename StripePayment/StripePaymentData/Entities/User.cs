@@ -7,6 +7,6 @@ namespace StripePaymentData.Entities
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public virtual Customer Customer { get; set; }
+        public virtual CustomerEntity Customer { get; set; }
     }
 }

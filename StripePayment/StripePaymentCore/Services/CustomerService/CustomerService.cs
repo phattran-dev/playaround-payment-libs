@@ -5,16 +5,14 @@ using StripePaymentData.UnitOfWorks;
 
 namespace StripePaymentCore.Services.CustomerService
 {
-    public class CustomerService : ICustomerService
+    public class CustomerService : BaseService, ICustomerService
     {
-        private readonly IRepository<PaymentDbContext, Customer, Guid> _customerRepository;
-        private readonly IUnitOfWork<PaymentDbContext> _unitOfWork;
-        public CustomerService(IUnitOfWork<PaymentDbContext> unitOfWork)
+        private readonly IRepository<PaymentDbContext, CustomerEntity, Guid> _customerRepository;
+        public CustomerService(IUnitOfWork<PaymentDbContext> unitOfWork) : base(unitOfWork)
         {
-            _unitOfWork = unitOfWork;
-            _customerRepository = unitOfWork.GetRepository<Customer, Guid>();
+            _customerRepository = unitOfWork.GetRepository<CustomerEntity, Guid>();
         }
-        public async Task AddOrderAsync(Customer customer)
+        public async Task AddOrderAsync(CustomerEntity customer)
         {
             var existedCustomer = await _customerRepository.GetByIdAsync(customer.Id);
             if (existedCustomer == null)
@@ -24,7 +22,7 @@ namespace StripePaymentCore.Services.CustomerService
             await _unitOfWork.SaveChangeAsync();
         }
 
-        public async Task DeleteOrderAsync(Customer customer)
+        public async Task DeleteOrderAsync(CustomerEntity customer)
         {
             var existedCustomer = await _customerRepository.GetByIdAsync(customer.Id);
             if (existedCustomer == null)
@@ -34,7 +32,7 @@ namespace StripePaymentCore.Services.CustomerService
             await _unitOfWork.SaveChangeAsync();
         }
 
-        public async Task UpdateOrderAsync(Customer customer)
+        public async Task UpdateOrderAsync(CustomerEntity customer)
         {
             var existedCustomer = await _customerRepository.GetByIdAsync(customer.Id);
             if (existedCustomer == null)

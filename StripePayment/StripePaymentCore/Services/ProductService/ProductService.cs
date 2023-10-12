@@ -7,15 +7,15 @@ namespace StripePaymentCore.Services.ProductService
 {
     public class ProductService : IProductService
     {
-        private readonly IRepository<PaymentDbContext, Product, Guid> _productRepository;
+        private readonly IRepository<PaymentDbContext, ProductEntity, Guid> _productRepository;
         private readonly IUnitOfWork<PaymentDbContext> _unitOfWork;
         public ProductService(IUnitOfWork<PaymentDbContext> unitOfWork)
         {
             _unitOfWork = unitOfWork;
-            _productRepository = unitOfWork.GetRepository<Product, Guid>();
+            _productRepository = unitOfWork.GetRepository<ProductEntity, Guid>();
         }
 
-        public async Task AddProductAsync(Product product)
+        public async Task AddProductAsync(ProductEntity product)
         {
             var existedProduct = await _productRepository.GetByIdAsync(product.Id);
             if (existedProduct == null)

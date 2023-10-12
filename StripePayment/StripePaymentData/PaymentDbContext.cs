@@ -11,10 +11,11 @@ namespace StripePaymentData
         public PaymentDbContext(DbContextOptions<PaymentDbContext> options) : base(options) { 
         }
 
-        public DbSet<Customer> Customers { get; set; }
-        public DbSet<Product> Products { get; set; }
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<CustomerEntity> Customers { get; set; }
+        public DbSet<ProductEntity> Products { get; set; }
+        public DbSet<OrderEntity> Orders { get; set; }
+        public DbSet<OrderItemEntity> OrderItems { get; set; }
+        public DbSet<PaymentProcessEntity> PaymentProcess { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -32,6 +33,7 @@ namespace StripePaymentData
             builder.ApplyConfigurationsFromAssembly(typeof(ProductEntityTypeConfiguration).Assembly);
             builder.ApplyConfigurationsFromAssembly(typeof(OrderEntityTypeConfiguration).Assembly);
             builder.ApplyConfigurationsFromAssembly(typeof(OrderItemEntityTypeConfiguration).Assembly);
+            builder.ApplyConfigurationsFromAssembly(typeof(PaymentProcessEntityTypeConfiguration).Assembly);
         }
     }
 }

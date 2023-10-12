@@ -4,7 +4,7 @@ namespace StripePaymentCore.Services.ProductService
 {
     public interface IProductService
     {
-        Task AddProductAsync(Product product);
+        Task AddProductAsync(ProductEntity product);
 
         //Task AddProductsAsync(List<Product> products);
 

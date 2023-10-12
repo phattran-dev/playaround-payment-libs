@@ -5,9 +5,9 @@ using StripePaymentData.Configurations.BaseConfiguration;
 
 namespace StripePaymentData.Configurations
 {
-    public class CustomerEntityTypeConfiguration : FullAuditedEntityTypeConfigurationBase<Customer, Guid>
+    public class CustomerEntityTypeConfiguration : FullAuditedEntityTypeConfigurationBase<CustomerEntity, Guid>
     {
-        public override void Configure(EntityTypeBuilder<Customer> builder)
+        public override void Configure(EntityTypeBuilder<CustomerEntity> builder)
         {
             base.Configure(builder);
 

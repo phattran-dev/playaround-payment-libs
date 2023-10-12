@@ -2,9 +2,9 @@
 
 namespace StripePaymentData.Entities
 {
-    public class Customer : FullAuditedEntityBase<User, Guid>
+    public class CustomerEntity : FullAuditedEntityBase<User, Guid>
     {
         public string Code { get; set; }
-        public ICollection<Order> Orders { get; set; }
+        public ICollection<OrderEntity> Orders { get; set; }
     }
 }
